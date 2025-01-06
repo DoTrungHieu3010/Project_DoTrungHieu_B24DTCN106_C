@@ -158,20 +158,20 @@ void checkCategory(Category category[], int n) {
         printf("No categories to check.\n");
         return;
     }
-    int duplicates = 0;
+    int check = 0;
     for (int i = 0; i < n - 1; i++) {
         for (int j = i + 1; j < n; j++) {
             if (category[i].categoryId == category[j].categoryId) {
                 printf("Duplicate ID found: %d\n", category[i].categoryId);
-                duplicates++;
+                check++;
             }
             if (strcmp(category[i].categoryName, category[j].categoryName) == 0) {
                 printf("Duplicate name found: %s\n", category[i].categoryName);
-                duplicates++;
+                check++;
             }
         }
     }
-    if (duplicates == 0) {
+    if (check == 0) {
         printf("No duplicates found.\n");
     }
 }
@@ -192,7 +192,7 @@ void productMenu() {
 void adminLogin() {
     char loginEmail[50];
     char loginPassword[50];
-    char registerEmail[] = "admin ";
+    char registerEmail[] = "admin";
     char registerPassword[] = "1234";
     printf("Please enter your email: ");
     fflush(stdin);

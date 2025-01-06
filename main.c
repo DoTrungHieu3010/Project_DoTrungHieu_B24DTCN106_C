@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 	};
 	//
 	adminLogin();
-	FILE *ptr = fopen("categoryData.bin", "rb");
+	FILE *ptr = fopen("categoryData.dat", "rb");
     if (ptr != NULL) {
         while (fread(&category[n], sizeof(Category), 1, ptr)) {
             n++;
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
         			scanf("%d", &choice);
         			switch(choice){
         				case 1:
-        					
+        				break;	
 					}
 				}
 				while (choice!=8);
@@ -77,7 +77,7 @@ int main(int argc, char *argv[]) {
                 printf("Invalid choice! Please try again.\n");
         }
     } while (choice != 9);
-	ptr = fopen("categoryData.bin", "wb");
+	ptr = fopen("categoryData.dat", "rb");
     if (ptr == NULL) {
         printf("Error saving data!\n");
     } else {
